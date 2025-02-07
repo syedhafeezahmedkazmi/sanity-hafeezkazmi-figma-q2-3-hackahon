@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Header from '../components/header'
+// import Header from '../components/header'
 import Field from '../components/Hero'
 
 function CheackOut() {
