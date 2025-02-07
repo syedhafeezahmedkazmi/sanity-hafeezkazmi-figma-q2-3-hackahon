@@ -1,7 +1,6 @@
 'use client'; // Required for React hooks in Next.js
 
 import { useState } from "react";
-import Header from "@/app/components/header";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
