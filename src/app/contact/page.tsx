@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { IoLocationSharp } from 'react-icons/io5'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { BsFillClockFill } from 'react-icons/bs'
-import Header from '../components/header'
+// import Header from '../components/header'
 
 function Contact() {
     return (
