@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 import { FaCartPlus, FaHeart } from 'react-icons/fa';
-import { BsFacebook } from 'react-icons/bs';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+// import { BsFacebook } from 'react-icons/bs';
+// import { FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { useState } from 'react';
 import { useCart } from '../../../context/CartContext';
 
