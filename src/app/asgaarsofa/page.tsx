@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsFacebook } from "react-icons/bs";
 import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import Header from "../components/header";
+// import Header from "../components/header";
 
 function AsgaardSofa() {
   const images = ["/sofaset.jpeg", "/sofaset2.jpeg", "/hero2.jpeg"];
