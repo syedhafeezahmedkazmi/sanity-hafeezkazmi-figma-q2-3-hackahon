@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { IoTimeOutline } from 'react-icons/io5';
 import { CiCalendar } from 'react-icons/ci';
-import Header from './header';
+// import Header from './header';
 
 function Hero() {
     return (
