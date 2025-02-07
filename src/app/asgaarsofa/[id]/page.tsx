@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { BsFacebook } from 'react-icons/bs';
 import { FaLinkedin, FaTwitter } from 'react-icons/fa';
-import Header from '@/app/components/header';
+// import Header from '@/app/components/header';
 
 function AsgaardSofa() {
     const images = ["/shop.jpeg", "/shop.jpeg", "/shop.jpeg"]; // Replace with correct image paths
