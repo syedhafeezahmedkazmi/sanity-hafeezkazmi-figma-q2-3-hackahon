@@ -1,32 +1,10 @@
-'use client'; // Required for React hooks in Next.js
+
+
+"use client"; // Mark this file as a Client Component
 
 import { useState } from "react";
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-
-const page = async ({ params: { id } }: { params: { id: string } }) => {
-  const query = `*[ _type == "product" && _id == $id]{
-    name,
-    "id": _id,
-    price,
-    description,
-    category,
-    "image": image.asset._ref
-  }[0]`;
-
-  const product: Product | null = await client.fetch(query, { id });
-
-  if (!product) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <h1 className="text-2xl font-semibold text-gray-600">Product not found</h1>
-      </div>
-    );
-  }
-
-  return <ProductPage product={product} />;
-};
+import { urlFor } from "@/sanity/lib/image";
 
 const ProductPage = ({ product }: { product: Product }) => {
   const [cart, setCart] = useState<Product[]>([]);
@@ -59,35 +37,6 @@ const ProductPage = ({ product }: { product: Product }) => {
               <p className="text-3xl mt-6 font-bold text-gray-900">$ {product.price}</p>
             </div>
 
-            {/* Size Options */}
-            <div className="mt-8">
-              <span className="font-semibold text-lg text-gray-800">Select Size:</span>
-              <div className="flex space-x-3 mt-3">
-                {["L", "XL", "XS"].map((size) => (
-                  <button
-                    key={size}
-                    className="px-5 py-2 border border-gray-300 rounded-lg text-gray-800 hover:bg-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Color Options */}
-            <div className="mt-6">
-              <span className="font-semibold text-lg text-gray-800">Choose Color:</span>
-              <div className="flex space-x-4 mt-3">
-                {["#000", "#FFD700", "#800080"].map((color) => (
-                  <div
-                    key={color}
-                    className="w-8 h-8 rounded-full border border-gray-300 cursor-pointer hover:scale-110 transform transition-transform"
-                    style={{ backgroundColor: color }}
-                  ></div>
-                ))}
-              </div>
-            </div>
-
             {/* Add to Cart */}
             <div className="mt-8">
               <button
@@ -100,27 +49,11 @@ const ProductPage = ({ product }: { product: Product }) => {
           </div>
         </div>
       </div>
-
-      {/* Cart Summary */}
-      {cart.length > 0 && (
-        <div className="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4">
-          <h2 className="font-bold text-lg">Cart</h2>
-          <ul className="mt-2">
-            {cart.map((item, index) => (
-              <li key={index} className="flex justify-between text-gray-800">
-                <span>{item.name}</span>
-                <span>${item.price}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 font-bold">Total: ${cart.reduce((total, item) => total + item.price, 0)}</p>
-        </div>
-      )}
     </div>
   );
 };
 
-export default page;
+export default ProductPage;
 
 // --------------------------old coding------------------------------------
 // 'use client'; // Required for React hooks in Next.js
