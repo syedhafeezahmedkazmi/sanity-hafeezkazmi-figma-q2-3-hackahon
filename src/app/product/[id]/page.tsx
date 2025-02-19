@@ -3,7 +3,8 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { client } from '@/sanity/lib/client';
-import ProductDetail from './productdetail';
+// import ProductDetail from './productdetail';
+import ProductDetail from '@/app/components/ProductDetail';
 
 const Page = () => {
   const { id } = useParams(); // Get `id` from the URL
